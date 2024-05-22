@@ -45,3 +45,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 🎨 Design System
+
+We use [shadcn/ui](https://ui.shadcn.com/) as components library.
+
+Prototype available in [Figma](https://www.figma.com/design/bwqNtCTzFavQkPROknAkIu/Design-Presentation?node-id=104%3A1130&t=F7d6RMThlVIx7QF8-1).
