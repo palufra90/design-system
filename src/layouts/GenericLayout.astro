@@ -1,0 +1,38 @@
+---
+import "@/global.css";
+import { Image } from "astro:assets";
+import logoImg from "@assets/logo.png";
+import { NavigationMenuDemo } from "@/lib/navMenu";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header class="sticky py-3 top-0 z-50 w-full bg-black">
+      <div
+        class="container flex justify-around h-14 max-w-screen-2xl items-center"
+      >
+        <a href="/" class="mr-6 flex items-center space-x-2">
+          <Image height="50" src={logoImg} alt="urban vista logo" />
+        </a>
+        <div
+          class="flex flex-auto items-center justify-between space-x-2 md:justify-end"
+        >
+          <NavigationMenuDemo client:load />
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer class="bg-black text-white py-4">
+      <div class="container">
+        <p class="text-center">© 2021 Urban Vista Architecture</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,18 +1,80 @@
 ---
-import '@/global.css';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import GenericLayout from "@/layouts/GenericLayout.astro";
+import Gallery from "@/lib/Gallery.astro";
+import { Services } from "@/lib/Services";
+import backgroundImg from "@assets/background.png";
+import subscribe from "@assets/subscribe.png";
+import { Image } from "astro:assets";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<Button>Hello World</Button>
-	</body>
-</html>
+<GenericLayout>
+  <div class="flex flex-col">
+    <div class="main h-screen flex-1">
+      <div class="ml-80 grow-0 self-center z-20 flex flex-col gap-y-8">
+        <h1
+          class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+        >
+          Welcome to our<br />virtual home
+        </h1>
+        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+          hope you have enjoyed the <br />presentation so far.
+        </h3>
+        <Button className="max-w-28">Learn More</Button>
+      </div>
+
+      <Image src={backgroundImg} alt="background" />
+    </div>
+    <div class="flex-1 mx-96 my-20">
+      <h3 class="my-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+        ABOUT US
+      </h3>
+      <p class="leading-7">
+        We sculpt spaces that breathe life into dreams. With a fusion of
+        innovation and timeless design principles, we craft environments that
+        inspire and endure. From contemporary marvels to classical elegance, our
+        architectural expertise shapes the future while honoring the past.
+        Welcome to a world where every structure tells a story of passion and
+        precision.
+      </p>
+    </div>
+    <Gallery />
+    <div class="flex-1 grid grid-cols-3 gap-4 mx-80 my-40 items-start">
+      <h3
+        class="p-4 justify-self-end scroll-m-20 text-2xl font-semibold tracking-tight"
+      >
+        OUR SERVICES
+      </h3>
+      <Services className="col-span-2 justify-self-center" client:load />
+    </div>
+    <div class="main items-center">
+      <div class="my-4 justify-self-center scroll-m-20 z-20">
+        <h3
+          class="scroll-m-20 text-2xl font-semibold tracking-tight text-black"
+        >
+          SUBSCRIBE TO OUR NEWSLETTER
+        </h3>
+        <div class="flex items-center mt-6">
+          <Input
+            className="bg-white border-slate-100"
+            type="email"
+            placeholder="Email"
+          />
+          <Button variant="outline" className="ml-4 max-w-28">Subscribe</Button>
+        </div>
+      </div>
+
+      <Image src={subscribe} alt="background" />
+    </div>
+  </div>
+</GenericLayout>
+
+<style lang="scss">
+  .main {
+    display: grid;
+  }
+  .main > * {
+    grid-area: 1/1;
+  }
+</style>

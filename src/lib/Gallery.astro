@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import img1 from "@assets/img1.png";
+import img2 from "@assets/img2.png";
+import img3 from "@assets/img3.png";
+import img4 from "@assets/img4.png";
+import img5 from "@assets/img5.png";
+
+import { Button } from "@/components/ui/button";
+---
+
+<div class="flex-1 grid grid-cols-2 gap-y-4 my-20 mx-40 items-center">
+  <Image class="justify-self-center" src={img1} alt="background" />
+  <Image class="justify-self-center" src={img2} alt="background" />
+  <div class="mx-40 justify-self-center">
+    <h3 class="my-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+      OUR PROJECTS
+    </h3>
+    <p>
+      Our projects epitomise the seamless blend of artistry and functionality.
+      With every project, we redefine boundaries, shaping landscapes and
+      enriching communities with our visionary approach.
+    </p>
+    <Button className="mt-4 max-w-28">See All</Button>
+  </div>
+  <Image class="justify-self-center" src={img3} alt="background" />
+  <Image class="justify-self-center" src={img4} alt="background" />
+  <Image class="justify-self-center" src={img5} alt="background" />
+</div>
